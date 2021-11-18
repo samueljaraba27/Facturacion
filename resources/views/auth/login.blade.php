@@ -2,49 +2,113 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elegant Dashboard | Sign In</title>
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset('assets/img/svg/logo.svg') }}" type="image/x-icon">
-    <!-- Custom styles -->
-    <link rel="stylesheet" href="{{ asset('assets/css/style.min.css') }}">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon" />
+    <title>Sign In | PlainAdmin Demo</title>
+
+    <!-- ========== All CSS files linkup ========= -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/lineicons.css" />
+    <link rel="stylesheet" href="assets/css/materialdesignicons.min.css" />
+    <link rel="stylesheet" href="assets/css/fullcalendar.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 
 <body>
-    <div class="layer"></div>
-    <main class="page-center">
-        <article class="sign-up">
-            <h1 class="sign-up__title">¡Bienvenido de nuevo!</h1>
-            <img class="mb-4" src="{{ asset('assets/img/isotipo.png') }}" alt="Logo Esys" width="250"
-                height="250" />
-            <p class="sign-up__subtitle">Inicie sesión con su cuenta para continuar</p>
-            <form class="sign-up-form form" action="" method="">
-                <label class="form-label-wrapper">
-                    <p class="form-label">Usuario</p>
-                    <input class="form-input" type="text" placeholder="Introduce tu Usuario" required>
-                </label>
-                <label class="form-label-wrapper">
-                    <p class="form-label">Contrase&ntilde;a</p>
-                    <input class="form-input" type="password" placeholder="Ingresa tu contrase&ntilde;a" required>
-                </label>
-                <a class="link-info forget-link" href="##">¿Olvidaste tu contraseña?</a>
-                <label class="form-checkbox-wrapper">
-                    <input class="form-checkbox" type="checkbox" required>
-                    <span class="form-checkbox-label">Recuerdame la proxima vez</span>
-                </label>
-                {{-- <button class="form-btn primary-default-btn transparent-btn">Ingresar al Sistema</button> --}}
-                <a href="{{route('home')}}" class="form-btn primary-default-btn transparent-btn">Ingresar al Sistema</a>
-            </form>
-        </article>
-    </main>
-    <!-- Chart library -->
-    <script src="{{ asset('assets/plugins/chart.min.js') }}"></script>
-    <!-- Icons library -->
-    <script src="{{ asset('assets/plugins/feather.min.js') }}"></script>
-    <!-- Custom scripts -->
-    <script src="{{ asset('assets/js/script.js') }}"></script>
+
+    <div class="overlay"></div>
+
+    <!-- ========== signin-section start ========== -->
+    <section class="signin-section pt-90">
+        <div class="container d-flex justify-content-center">
+            <div class="row g-0 auth-row">
+                <div class="col-lg-8">
+                    <div class="auth-cover-wrapper ">
+                        <div class="auth-cover">
+                            <div class="title text-center">
+                                <h1 class="text-primary mb-10">Bienvenido de nuevo</h1>
+                                <p class="text-medium">
+                                    Inicie sesión en su cuenta existente para continuar
+                                </p>
+                            </div>
+                            <div class="cover-image">
+                                <img src="{{ asset('assets/images/banner.png') }}" alt="" />
+                            </div>
+                            <div class="shape-image">
+                                <img src="assets/images/auth/shape.svg" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end col -->
+                <div class="col-lg-4">
+                    <div class="signin-wrapper">
+                        <div class="form-wrapper">
+                            <h6 class="mb-15">Sign In Form</h6>
+                            <p class="text-sm mb-25">
+                                Start creating the best possible user experience for you
+                                customers.
+                            </p>
+                            <form action="#">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="input-style-1">
+                                            <label>Usuario</label>
+                                            <input type="text" placeholder="Usuario" id="usuario" name="usuario"
+                                                class="form-control" />
+                                        </div>
+                                    </div>
+                                    <!-- end col -->
+                                    <div class="col-12">
+                                        <div class="input-style-1">
+                                            <label>Contraseña</label>
+                                            <input type="password" placeholder="Contraseña" id="contraseña"
+                                                name="contraseña" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <!-- end col -->
+
+                                    <!-- end col -->
+                                    <div class="col-12">
+                                        <div class=" button-group  d-flex justify-content-center flex-wrap">
+                                            <button class=" main-btn  primary-btn btn-hover w-100 text-center">
+                                                Iniciar Sesión
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end row -->
+                            </form>
+
+                            <p class="text-sm text-medium text-dark text-center pt-50">
+                                ¿Aún no tienes una cuenta?
+                                <a href="#0">Crea una cuenta</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+        </div>
+    </section>
+    <!-- ========== signin-section end ========== -->
+
+    <!-- ======== main-wrapper end =========== -->
+
+    <!-- ========= All Javascript files linkup ======== -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/Chart.min.js"></script>
+    <script src="assets/js/dynamic-pie-chart.js"></script>
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/fullcalendar.js"></script>
+    <script src="assets/js/jvectormap.min.js"></script>
+    <script src="assets/js/world-merc.js"></script>
+    <script src="assets/js/polyfill.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
