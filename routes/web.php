@@ -19,3 +19,6 @@ Route::get('/', function () {
 
 /* Rutas para El home */
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+/* Rutas para Gestionar La Facturacion */
+Route::get('/facturacion', [App\Http\Controllers\FacturaController::class, 'index'])->name('facturacion');

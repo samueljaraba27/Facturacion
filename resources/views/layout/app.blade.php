@@ -28,7 +28,6 @@
                              <span class="logo-title">eSysPOS</span>
                              <span class="logo-subtitle">plus</span>
                          </div>
-
                      </a>
                      <button class="sidebar-toggle transparent-btn" title="Menu" type="button">
                          <span class="sr-only">Toggle menu</span>
@@ -39,11 +38,11 @@
                      <ul class="sidebar-body-menu">
                          <li>
                              <a class="active" href="/"><span class="icon home"
-                                     aria-hidden="true"></span>Tablero</a>
+                                     aria-hidden="true"></span>Estritorio</a>
                          </li>
                          <li>
                              <a class="show-cat-btn" href="##">
-                                 <span class="icon document" aria-hidden="true"></span>Posts
+                                 <span class="icon document" aria-hidden="true"></span>Facturaci&oacute;n
                                  <span class="category__btn transparent-btn" title="Open list">
                                      <span class="sr-only">Open list</span>
                                      <span class="icon arrow-down" aria-hidden="true"></span>
@@ -51,16 +50,16 @@
                              </a>
                              <ul class="cat-sub-menu">
                                  <li>
-                                     <a href="posts.html">All Posts</a>
+                                     <a href="/facturacion">Electronica</a>
                                  </li>
                                  <li>
-                                     <a href="new-post.html">Add new post</a>
+                                     <a href="new-post.html">Listar Facturas</a>
                                  </li>
                              </ul>
                          </li>
                          <li>
                              <a class="show-cat-btn" href="##">
-                                 <span class="icon folder" aria-hidden="true"></span>Categories
+                                 <span class="icon folder" aria-hidden="true"></span>Archivo
                                  <span class="category__btn transparent-btn" title="Open list">
                                      <span class="sr-only">Open list</span>
                                      <span class="icon arrow-down" aria-hidden="true"></span>
@@ -68,7 +67,10 @@
                              </a>
                              <ul class="cat-sub-menu">
                                  <li>
-                                     <a href="categories.html">All categories</a>
+                                     <a href="categories.html">Referencias</a>
+                                 </li>
+                                 <li>
+                                     <a href="categories.html">Terceros</a>
                                  </li>
                              </ul>
                          </li>
@@ -114,9 +116,9 @@
                              <span class="msg-counter">7</span>
                          </li>
                      </ul>
-                     <span class="system-menu__title">system</span>
+                     <span class="system-menu__title">Sistema</span>
                      <ul class="sidebar-body-menu">
-                         <li>
+                         {{-- <li>
                              <a href="appearance.html"><span class="icon edit"
                                      aria-hidden="true"></span>Appearance</a>
                          </li>
@@ -153,10 +155,33 @@
                                      <a href="users-02.html">Users-02</a>
                                  </li>
                              </ul>
-                         </li>
+                         </li> --}}
                          <li>
+                             <a class="show-cat-btn" href="##">
+                                 <span class="icon setting" aria-hidden="true"></span>Configuraci&oacute;n
+                                 <span class="category__btn transparent-btn" title="Open list">
+                                     <span class="sr-only">Open list</span>
+                                     <span class="icon arrow-down" aria-hidden="true"></span>
+                                 </span>
+                             </a>
+                             <ul class="cat-sub-menu">
+                                 <li>
+                                     <a href="users-01.html">Empresa</a>
+                                 </li>
+                                 <li>
+                                     <a href="users-02.html">Usuarios</a>
+                                 </li>
+                                 <li>
+                                     <a href="users-02.html">Gesti&oacute;n</a>
+                                 </li>
+                                 <li>
+                                     <a href="users-02.html">Otros</a>
+                                 </li>
+                             </ul>
+                         </li> 
+{{--                          <li>
                              <a href="##"><span class="icon setting" aria-hidden="true"></span>Settings</a>
-                         </li>
+                         </li> --}}
                      </ul>
                  </div>
              </div>
@@ -192,23 +217,12 @@
                              <span class="sr-only">Toggle menu</span>
                              <span class="icon menu-toggle--gray" aria-hidden="true"></span>
                          </button>
-                         <div class="lang-switcher-wrapper">
-                             <button class="lang-switcher transparent-btn" type="button">
-                                 EN
-                                 <i data-feather="chevron-down" aria-hidden="true"></i>
-                             </button>
-                             <ul class="lang-menu dropdown">
-                                 <li><a href="##">English</a></li>
-                                 <li><a href="##">French</a></li>
-                                 <li><a href="##">Uzbek</a></li>
-                             </ul>
-                         </div>
                          <button class="theme-switcher gray-circle-btn" type="button" title="Switch theme">
                              <span class="sr-only">Switch theme</span>
                              <i class="sun-icon" data-feather="sun" aria-hidden="true"></i>
                              <i class="moon-icon" data-feather="moon" aria-hidden="true"></i>
                          </button>
-                         <div class="notification-wrapper">
+                         {{-- <div class="notification-wrapper">
                              <button class="gray-circle-btn dropdown-btn" title="To messages" type="button">
                                  <span class="sr-only">To messages</span>
                                  <span class="icon notification active" aria-hidden="true"></span>
@@ -256,7 +270,7 @@
                                      <a class="link-to-page" href="##">Go to Notifications page</a>
                                  </li>
                              </ul>
-                         </div>
+                         </div> --}}
                          <div class="nav-user-wrapper">
                              <button href="##" class="nav-user-btn dropdown-btn" title="My profile" type="button">
                                  <span class="sr-only">My profile</span>
@@ -289,7 +303,6 @@
              <main class="main users chart-page" id="skip-target">
                  <div class="container">
                             @yield('content')
-                     
                      {{-- <div class="row">
                          <div class="col-lg-9">
                              <div class="chart">
