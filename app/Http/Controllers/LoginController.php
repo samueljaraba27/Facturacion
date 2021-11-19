@@ -16,23 +16,16 @@ class LoginController extends Controller
     {
         $username = $request->post('username');
         $password = $request->post('password');
-        
+        $mode = $_POST['mode'];
         $stmt = null;
-
-        $login = DB::table('t80')->select('PERFIL', 'CLAVE','NOMUSU', 'GRUPUS', 'NITCLI')
-        ->where('PERFIL','=',$username)
-        ->where('CLAVE','=',$password)
-        ->get();
-        return $password;
-        $response="";
         try {
             switch ($mode) {
                 case 'login':
-                    /* $login = DB::table('t80')->select('PERFIL, CLAVE AS ID,NOMUSU, GRUPUS, NITCLI')
+                    $login = DB::table('t80')->select('PERFIL', 'CLAVE','NOMUSU', 'GRUPUS', 'NITCLI')
                     ->where('PERFIL','=',$username)
                     ->where('CLAVE','=',$password)
                     ->get();
-                    dd($login); */
+                   /* dd($login); */
                     break;
                 /* case 'validate':
                     $query .= "  AND NOMUSU = ? AND GRUPUS = ? AND NITCLI = ?";
@@ -49,19 +42,11 @@ class LoginController extends Controller
                     break; */
             }
         } catch (Exception $e) {
-           // return json_encode($response['error'] = $e->getMessage());
+            return  response()->json($login['error'] = $e->getMessage());
         } finally {
-            /* $stmt ? $stmt->close() : false;
-            $conexion ? $conexion->close() : false; */
-            //return json_encode($response);
+            return  response()->json($login);
         }
-        
-        /* if (!empty($POST)) {
-            # code...
-        } else {
-            # code...
-        } */
-        
+         
     }
 
     /**

@@ -1,6 +1,6 @@
 const d = document,
-  URL_USERS = '../login',
-  PATH_HOME = location.pathname.replace('facturacion.test/', '');
+  URL_USERS = '/login',
+  PATH_HOME = location.pathname+"home";
 
 function auth() {
   if (sessionStorage.getItem('user')) location.pathname = PATH_HOME;
@@ -9,9 +9,9 @@ function auth() {
     if (e.target.matches('#frm-login')) {
       try {
         let res = await fetch(URL_USERS, {
-           /*  headers: {
-                "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
-            }, */
+            headers: {
+              'X-CSRF-TOKEN': d.querySelector('meta[name="csrf-token"]').getAttribute('content')
+            },
           method: 'POST',
           body: appendForm({
             form: d.createElement('form'),
@@ -40,8 +40,10 @@ function MD5(str) {
 }
 
 function login(user) {
-  if (!user) {
-    Swal.mixin({
+  console.log(user);
+  if (user.length = 0) {
+    alert('Error');
+    /* Swal.mixin({
       toast: true,
       position: 'top',
       showConfirmButton: false,
@@ -49,7 +51,7 @@ function login(user) {
     }).fire({
       icon: 'error',
       title: 'Usuario y/o contraseña inválidos'
-    });
+    }); */
     return;
   } else {
     user.ID = btoa(user.ID);
