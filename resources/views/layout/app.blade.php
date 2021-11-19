@@ -938,6 +938,7 @@
          });
          // =========== chart four end
      </script>
+     @yield('scripts')
  </body>
 
  </html>

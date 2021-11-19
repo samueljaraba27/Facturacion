@@ -514,9 +514,13 @@
             </div>
         </div>
     </div>
-
 </div>
 <!-- End Col -->
 </div>
 <!-- End Row -->
+@endsection
+
+@section('scripts')
+<script src="{{ asset('/resources/js/facturacion/index.js') }}"></script>
+    
 @endsection
