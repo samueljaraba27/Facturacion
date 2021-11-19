@@ -22,3 +22,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 /* Rutas para Gestionar La Facturacion */
 Route::get('/facturacion', [App\Http\Controllers\FacturaController::class, 'index'])->name('facturacion');
+
+/* Rutas para hacer el login */
+Route::post('login', [App\Http\Controllers\LoginController::class, 'login'])->name('login');

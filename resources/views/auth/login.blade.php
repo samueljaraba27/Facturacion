@@ -9,11 +9,8 @@
     <title>Sign In | PlainAdmin Demo</title>
 
     <!-- ========== All CSS files linkup ========= -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/lineicons.css" />
-    <link rel="stylesheet" href="assets/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/fullcalendar.css" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
 </head>
 
 <body>
@@ -46,17 +43,17 @@
                 <div class="col-lg-4">
                     <div class="signin-wrapper">
                         <div class="form-wrapper">
-                            <h6 class="mb-15">Sign In Form</h6>
+                            <h6 class="mb-15">Facturación Electronica</h6>
                             <p class="text-sm mb-25">
-                                Start creating the best possible user experience for you
-                                customers.
+                                Empiece a crear la mejor experiencia de usuario posible para sus negocios.
                             </p>
-                            <form action="#">
+                            <form id="frm-login">
+                                @csrf
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="input-style-1">
                                             <label>Usuario</label>
-                                            <input type="text" placeholder="Usuario" id="usuario" name="usuario"
+                                            <input type="text" placeholder="Usuario" id="username" name="username"
                                                 class="form-control" />
                                         </div>
                                     </div>
@@ -64,8 +61,8 @@
                                     <div class="col-12">
                                         <div class="input-style-1">
                                             <label>Contraseña</label>
-                                            <input type="password" placeholder="Contraseña" id="contraseña"
-                                                name="contraseña" class="form-control" />
+                                            <input type="password" placeholder="Contraseña" id="password"
+                                                name="password" class="form-control" />
                                         </div>
                                     </div>
                                     <!-- end col -->
@@ -73,9 +70,13 @@
                                     <!-- end col -->
                                     <div class="col-12">
                                         <div class=" button-group  d-flex justify-content-center flex-wrap">
-                                            <button class=" main-btn  primary-btn btn-hover w-100 text-center">
+                                            <button type="submit"
+                                                class=" main-btn  primary-btn btn-hover w-100 text-center">
                                                 Iniciar Sesión
                                             </button>
+                                            {{-- <a href="home/" class=" main-btn  primary-btn btn-hover w-100 text-center">
+                                                Iniciar Sesión
+                                            </a> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -96,19 +97,12 @@
         </div>
     </section>
     <!-- ========== signin-section end ========== -->
-
     <!-- ======== main-wrapper end =========== -->
-
     <!-- ========= All Javascript files linkup ======== -->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/Chart.min.js"></script>
-    <script src="assets/js/dynamic-pie-chart.js"></script>
-    <script src="assets/js/moment.min.js"></script>
-    <script src="assets/js/fullcalendar.js"></script>
-    <script src="assets/js/jvectormap.min.js"></script>
-    <script src="assets/js/world-merc.js"></script>
-    <script src="assets/js/polyfill.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
+    <script src="{{ asset('js/login.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
 </body>
 
 </html>
