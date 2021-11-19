@@ -41,9 +41,9 @@ function MD5(str) {
 
 function login(user) {
   console.log(user);
-  if (user.length = 0) {
-    alert('Error');
-    /* Swal.mixin({
+  if (!user.length) {
+    //alert('Error');
+    Swal.mixin({
       toast: true,
       position: 'top',
       showConfirmButton: false,
@@ -51,7 +51,7 @@ function login(user) {
     }).fire({
       icon: 'error',
       title: 'Usuario y/o contraseña inválidos'
-    }); */
+    });
     return;
   } else {
     user.ID = btoa(user.ID);

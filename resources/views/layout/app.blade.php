@@ -353,7 +353,7 @@
                                          <a href="#0"> <i class="lni lni-cog"></i> Settings </a>
                                      </li>
                                      <li>
-                                         <a href="#0"> <i class="lni lni-exit"></i> Sign Out </a>
+                                         <a href="#0"> <i class="lni lni-exit"></i>Desconectar</a>
                                      </li>
                                  </ul>
                              </div>
@@ -413,6 +413,8 @@
      <script src="{{ asset('assets/js/jvectormap.min.js') }}"></script>
      <script src="{{ asset('assets/js/world-merc.js') }}"></script>
      <script src="{{ asset('assets/js/polyfill.js') }}"></script>
+     <script src="{{ asset('assets/js/cleave.min.js') }}"></script>
+     <script src="{{ asset('assets/js/sweetalert2@11.js') }}"></script>
      <script src="{{ asset('assets/js/main.js') }}"></script>
 
      <script>
