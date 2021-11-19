@@ -83,7 +83,10 @@
                      </a>
                      <ul id="ddmenu_3" class="collapse dropdown-nav">
                          <li>
-                             <a href="signin.html"> Referencia</a>
+                             <a href="/referencias"> Referencia</a>
+                         </li>
+                         <li>
+                             <a href="signin.html"> Ver Referencias</a>
                          </li>
                          <li>
                              <a href="signup.html"> Terceros </a>

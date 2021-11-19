@@ -25,3 +25,6 @@ Route::get('/facturacion', [App\Http\Controllers\FacturaController::class, 'inde
 
 /* Rutas para hacer el login */
 Route::post('login', [App\Http\Controllers\LoginController::class, 'login'])->name('login');
+
+/* Rutas de las referencias o Servicios */
+Route::get('referencias', [App\Http\Controllers\ReferenciasController::class, 'index'])->name('index');
