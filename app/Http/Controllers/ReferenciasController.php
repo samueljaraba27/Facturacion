@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ReferenciasController extends Controller
 {
@@ -13,7 +14,8 @@ class ReferenciasController extends Controller
      */
     public function index()
     {
-        return view('referencias.referencias');
+        $refencias = DB::table('t43')->paginate(15);
+        return view('referencias.listar_referencias',compact('refencias'));
     }
 
     /**
@@ -23,7 +25,7 @@ class ReferenciasController extends Controller
      */
     public function create()
     {
-        //
+        return view('referencias.referencias');
     }
 
     /**
