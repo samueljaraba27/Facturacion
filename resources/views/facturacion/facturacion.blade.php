@@ -457,6 +457,5 @@
 @endsection
 
 @section('scripts')
-<script src="{{ asset('/resources/js/facturacion/index.js') }}"></script>
-    
+<script src="{{ asset('/public/js/facturacion/index.js') }}"></script>    
 @endsection
