@@ -1,0 +1,21 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
+.no-borderer-white{
+    background: white;
+    border: 0; 
+}
+
+.borderer-buttom-white{
+    border-top: 0; 
+    border-left: 0; 
+    border-right: 0; 
+    background: white;
+}
+
+.borderer-buttom{
+    border-top: 0; 
+    border-left: 0; 
+    border-right: 0; 
+}

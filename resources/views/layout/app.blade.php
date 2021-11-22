@@ -6,16 +6,18 @@
      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
      <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon" />
-     <title>PlainAdmin Demo | Bootstrap 5 Admin Template</title>
+     <title>eSysPOS Plus</title>
 
      <!-- ========== All CSS files linkup ========= -->
 
      <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
+     <link rel="stylesheet" type="text/css" href="{{ asset('assets/libs/DataTables/datatables.min.css') }}" />
      <link rel="stylesheet" href="{{ asset('assets/css/lineicons.css') }}" />
      <link rel="stylesheet" href="{{ asset('assets/css/materialdesignicons.min.css') }}" />
      <link rel="stylesheet" href="{{ asset('assets/css/fullcalendar.css') }}" />
      <link rel="stylesheet" href="{{ asset('assets/css/fullcalendar.css') }}" />
      <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
+     <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
  </head>
 
  <body>
@@ -109,11 +111,11 @@
                          </li>
 
                  </li>
-                 <li>
+                 {{-- <li>
                      <a href="signin.html"> Ver Referencias</a>
-                 </li>
+                 </li> --}}
                  <li>
-                     <a href="signup.html"> Terceros </a>
+                     <a href="/terceros"> Terceros </a>
                  </li>
              </ul>
              </li>
@@ -432,6 +434,8 @@
      <!-- ======== main-wrapper end =========== -->
 
      <!-- ========= All Javascript files linkup ======== -->
+     <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
+     <script src="{{ asset('assets/libs/DataTables/datatables.min.js') }}"></script>
      <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
      <script src="{{ asset('assets/js/Chart.min.js') }}"></script>
      <script src="{{ asset('assets/js/dynamic-pie-chart.js') }}"></script>
@@ -443,8 +447,12 @@
      <script src="{{ asset('assets/js/cleave.min.js') }}"></script>
      <script src="{{ asset('assets/js/sweetalert2@11.js') }}"></script>
      <script src="{{ asset('assets/js/main.js') }}"></script>
-
-     <script>
+     <script src="https://cdn.jsdelivr.net/npm/datatables-buttons-excel-styles@1.2.0/js/buttons.html5.styles.min.js">
+     </script>
+     <script
+          src="https://cdn.jsdelivr.net/npm/datatables-buttons-excel-styles@1.2.0/js/buttons.html5.styles.templates.min.js">
+     </script>
+     {{-- <script>
          // ======== jvectormap activation
          var markers = [{
                  name: "Egypt",
@@ -966,6 +974,38 @@
              },
          });
          // =========== chart four end
+     </script> --}}
+
+     <script>
+         $(document).ready(function() {
+             $('#tabla_referencias').DataTable({
+                 "iDisplayLength": 50,
+                 "language": {
+                     "sProcessing": "Procesando...",
+                     "sLengthMenu": "Mostrar _MENU_ registros",
+                     "sZeroRecords": "No se encontraron resultados",
+                     "sEmptyTable": "Ningún dato disponible en esta tabla",
+                     "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                     "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                     "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                     "sInfoPostFix": "",
+                     "sSearch": "Buscar:",
+                     "sUrl": "",
+                     "sInfoThousands": ",",
+                     "sLoadingRecords": "Cargando...",
+                     "oPaginate": {
+                         "sFirst": "Primero",
+                         "sLast": "Último",
+                         "sNext": "Siguiente",
+                         "sPrevious": "Anterior"
+                     },
+                     "oAria": {
+                         "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                         "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                     }
+                 }
+             });
+         });
      </script>
      @yield('scripts')
  </body>

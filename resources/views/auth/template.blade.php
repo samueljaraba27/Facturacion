@@ -22,7 +22,7 @@
     <section class="signin-section pt-90">
         <div class="container d-flex justify-content-center">
             <div class="row g-0 auth-row">
-@yield('content')
+                @yield('content')
             </div>
             <!-- end col -->
         </div>

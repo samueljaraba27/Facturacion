@@ -14,7 +14,7 @@ class ReferenciasController extends Controller
      */
     public function index()
     {
-        $refencias = DB::table('t43')->paginate(15);
+        $refencias = DB::table('t43')->get();
         return view('referencias.listar_referencias',compact('refencias'));
     }
 

@@ -34,3 +34,6 @@ Route::post('login', [App\Http\Controllers\LoginController::class, 'login'])->na
 /* Rutas de las referencias o Servicios */
 Route::get('ver_todos', [App\Http\Controllers\ReferenciasController::class, 'index'])->name('index');
 Route::get('referencias', [App\Http\Controllers\ReferenciasController::class, 'create'])->name('create');
+
+/* Rutas Para Terceros */
+Route::get('terceros', [App\Http\Controllers\TercerosController::class, 'index'])->name('index');
